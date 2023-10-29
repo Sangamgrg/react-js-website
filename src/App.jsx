@@ -1,16 +1,19 @@
 import About from "./components/About";
+import Blog from "./components/Blog";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
+import Products from "./components/Products";
 import Services from "./components/Services";
 
 function App() {
   return (
     <>
-      <h1 className='text-3xl font-bold text-brandPrimary'>Hello world!</h1>
       <NavBar />
       <Home />
       <Services />
       <About />
+      <Products />
+      <Blog />
     </>
   );
 }
