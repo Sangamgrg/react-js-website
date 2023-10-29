@@ -1,4 +1,9 @@
 import React from "react";
+//motion
+import { motion } from "framer-motion";
+//variants;
+import { fadeIn } from "../variants";
+
 import company1Img from "../assets/company1.png";
 import company2Img from "../assets/company2.png";
 import company3Img from "../assets/company3.png";
@@ -35,8 +40,13 @@ function Services() {
     },
   ];
   return (
-    <div className='md:px-14 px-4 py-16 max-w-screen-xl mx-auto'>
-      <div className='text-center my-8'>
+    <div className='md:px-14 px-4 py-16 max-w-screen-xl mx-auto' id='service'>
+      <motion.div
+        variants={fadeIn("up", 0.2)}
+        initial='hidden'
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className='text-center my-8'>
         <h2 className='text-4xl text-neutralDGrey font-semibold mb-2'>
           Our Clients
         </h2>
@@ -54,36 +64,44 @@ function Services() {
           <img src={company6Img} alt='' />
           <img src={company7Img} alt='' />
         </div>
+      </motion.div>
 
-        {/* Services card */}
-        <div className='mt-29 md:w-1/2 mx-auto text-center '>
-          <h2 className='text-4xl text-neutralDGrey font-semibold mb-3'>
-            Manage your entire community in a single system
-          </h2>
-          <p className='text-neutralGrey'>Who is Nextcent suitable for?</p>
-        </div>
+      {/* Services card */}
+      <motion.div
+        variants={fadeIn("up", 0.3)}
+        initial='hidden'
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className='mt-29 md:w-1/2 mx-auto text-center '>
+        <h2 className='text-4xl text-neutralDGrey font-semibold mb-3'>
+          Manage your entire community in a single system
+        </h2>
+        <p className='text-neutralGrey'>Who is Nextcent suitable for?</p>
+      </motion.div>
 
-        {/* cards */}
-        <div className='mt-14 grid lg:grid-cols-3 md:grid-col-2 grid-cols-1 md:w-11/12 mx-auto gap-12 '>
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className='px-4 py-8 text-center wd:w-[300px] mx-auto md:h-80 rounded-md shadow cursor-pointer hover:-translate-y-5 hover:border-b-4 hover:border-indigo-700 transition-all duration-300 flex items-center justify-center h-full'>
-              <div>
-                <div className='bg-[#E8F5E9] mb-4 h-14 w-14 mx-auto rounded-tl-3xl rounded-br-3xl'>
-                  <img src={service.image} alt='m-5' className='-ml-2' />
-                </div>
-                <h4 className='text-2xl font-bold text-neutralDGrey mb-2 px-2'>
-                  {service.title}
-                </h4>
-                <p className='text-sm text-neutralGrey'>
-                  {service.description}
-                </p>
+      {/* cards */}
+      <motion.div
+        variants={fadeIn("right", 0.4)}
+        initial='hidden'
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className='mt-14 grid lg:grid-cols-3 md:grid-col-2 grid-cols-1 md:w-11/12 mx-auto gap-12 '>
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className='px-4 py-8 text-center wd:w-[300px] mx-auto md:h-80 rounded-md shadow cursor-pointer hover:-translate-y-5 hover:border-b-4 hover:border-indigo-700 transition-all duration-300 flex items-center justify-center h-full'>
+            <div>
+              <div className='bg-[#E8F5E9] mb-4 h-14 w-14 mx-auto rounded-tl-3xl rounded-br-3xl'>
+                <img src={service.image} alt='m-5' className='-ml-2' />
               </div>
+              <h4 className='text-2xl font-bold text-neutralDGrey mb-2 px-2'>
+                {service.title}
+              </h4>
+              <p className='text-sm text-neutralGrey'>{service.description}</p>
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        ))}
+      </motion.div>
     </div>
   );
 }

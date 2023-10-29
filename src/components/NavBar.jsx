@@ -40,7 +40,7 @@ function NavBar() {
   ];
 
   return (
-    <header className='w-full bg-white md: bg-transparent fixed top-0 left-0 right-0'>
+    <header className='w-full bg-white md: bg-transparent fixed top-0 left-0 right-0 z-10'>
       <nav
         className={`py-4 lg:px-14 px-4 ${
           isSticky
@@ -65,7 +65,7 @@ function NavBar() {
                 offset={-100}
                 duration={500}
                 key={path}
-                className='block text-base text-gray900 hover:text-brandPrimary first:font-medium '>
+                className='block cursor-pointer text-base text-gray900 hover:text-brandPrimary first:font-medium '>
                 {link}
               </Link>
             ))}
@@ -110,7 +110,7 @@ function NavBar() {
               offset={-100}
               duration={500}
               key={path}
-              className='block text-base text-white hover:text-brandPrimary first:font-medium '>
+              className='block text-base text-white hover:text-neutralDGrey first:font-medium '>
               {link}
             </Link>
           ))}
